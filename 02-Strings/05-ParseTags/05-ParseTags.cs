@@ -19,7 +19,7 @@ namespace _05_ParseTags
             //}
             //Console.WriteLine(text);
 
-            Console.WriteLine(Regex.Replace(text, "<upcase>(.*?)</upcase>", word => word.Groups[1].Value.ToUpper()));
+            Console.WriteLine(Regex.Replace(text, "<upcase>(?<toUpper>.*?)</upcase>", word => word.Groups["toUpper"].Value.ToUpper()));
         }
     }
 }
