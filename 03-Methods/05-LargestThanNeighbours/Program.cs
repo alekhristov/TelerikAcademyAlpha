@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace _04_AppearanceCount
+namespace _05_LargestThanNeighbours
 {
     class Program
     {
@@ -9,17 +9,18 @@ namespace _04_AppearanceCount
         {
             var n = int.Parse(Console.ReadLine());
             var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            var number = int.Parse(Console.ReadLine());
 
-            NumberAppereanceCount(n, input, number);
+            PrintNumberLargerThanNeighbours(n, input);
         }
 
-        private static void NumberAppereanceCount(int n, int[] input, int number)
+        private static void PrintNumberLargerThanNeighbours(int n, int[] input)
         {
             var counter = 0;
-            for (int i = 0; i < n; i++)
+          
+            for (int i = 1; i < n - 1; i++)
             {
-                if (input[i] == number)
+                var currentNum = input[i];
+                if (currentNum >= input[i-1] && currentNum >= input[i+1])
                 {
                     counter++;
                 }
