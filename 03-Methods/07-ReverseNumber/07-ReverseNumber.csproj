@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{169AA5E6-FFC8-4322-95AC-2A4259AC5779}</ProjectGuid>
+    <ProjectGuid>{DA9F8BBC-0E7B-42DE-9D7B-92C297572B53}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_05_LargestThanNeighbours</RootNamespace>
-    <AssemblyName>05-LargestThanNeighbours</AssemblyName>
+    <RootNamespace>_07_ReverseNumber</RootNamespace>
+    <AssemblyName>07-ReverseNumber</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="05-LargestThanNeighbours.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

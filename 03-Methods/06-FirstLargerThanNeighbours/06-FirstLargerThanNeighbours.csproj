@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{169AA5E6-FFC8-4322-95AC-2A4259AC5779}</ProjectGuid>
+    <ProjectGuid>{EC3108C9-B216-4D18-9B43-0B587AA9A403}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_05_LargestThanNeighbours</RootNamespace>
-    <AssemblyName>05-LargestThanNeighbours</AssemblyName>
+    <RootNamespace>_06_FirstLargerThanNeighbours</RootNamespace>
+    <AssemblyName>06-FirstLargerThanNeighbours</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="05-LargestThanNeighbours.cs" />
+    <Compile Include="06-FirstLargerThanNeighbours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
