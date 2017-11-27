@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-SayHello", "01-SayHello\01-SayHello.csproj", "{97E42821-6436-4695-BC5D-3BBC1D5C09DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-GetLargestNumber", "02-GetLargestNumber\02-GetLargestNumber.csproj", "{B0060560-9187-4C9C-BB69-10272E7E659E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97E42821-6436-4695-BC5D-3BBC1D5C09DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E42821-6436-4695-BC5D-3BBC1D5C09DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E42821-6436-4695-BC5D-3BBC1D5C09DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E42821-6436-4695-BC5D-3BBC1D5C09DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0060560-9187-4C9C-BB69-10272E7E659E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0060560-9187-4C9C-BB69-10272E7E659E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0060560-9187-4C9C-BB69-10272E7E659E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0060560-9187-4C9C-BB69-10272E7E659E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52B4E600-A4C3-4E33-8357-66B884E862D9}
+	EndGlobalSection
+EndGlobal
