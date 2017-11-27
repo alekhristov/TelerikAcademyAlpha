@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D61F722D-DABC-433A-A881-C660B74EE06C}</ProjectGuid>
+    <ProjectGuid>{30B53AE5-882C-41D5-9C77-88D9232AFE0E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_08_NumberAsArray</RootNamespace>
-    <AssemblyName>08-NumberAsArray</AssemblyName>
+    <RootNamespace>_10_NFactorial</RootNamespace>
+    <AssemblyName>10-NFactorial</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="08-NumberAsArray.cs" />
+    <Compile Include="10-NFactorial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

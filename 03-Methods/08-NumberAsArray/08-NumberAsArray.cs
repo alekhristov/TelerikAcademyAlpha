@@ -13,7 +13,6 @@ namespace _08_NumberAsArray
             var array2 = Console.ReadLine().Split().Select(int.Parse).ToList();
 
             SumOfTwoArrays(arraysLengths, array1, array2);
-
         }
 
         private static void SumOfTwoArrays(int[] arraysLengths, List<int>array1, List<int>array2)
