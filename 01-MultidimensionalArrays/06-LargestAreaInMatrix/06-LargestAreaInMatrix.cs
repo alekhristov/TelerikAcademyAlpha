@@ -38,7 +38,6 @@ class Program
                 }
             }
         }
-
         Console.WriteLine(greatestArea);
     }
 

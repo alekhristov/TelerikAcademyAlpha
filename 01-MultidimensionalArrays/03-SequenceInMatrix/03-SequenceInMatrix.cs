@@ -1,57 +1,151 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
 
-namespace _03_SequenceInMatrix
+namespace MaxSequenceInAnArray
 {
-    class Program
+    class MaxSequence
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var matrixSize = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            var n = matrixSize[0];
-            var m = matrixSize[1];
-            var matrix = new int[n, m];
+            string dimensions = Console.ReadLine();
+            string[] dim = dimensions.Split(' ');
+            int rows = int.Parse(dim[0]);
+            int cols = int.Parse(dim[1]);
 
-            for (int row = 0; row < n; row++)
+            int[,] array = new int[rows, cols];
+
+            FillingTheMatrix(array, rows, cols);
+            Console.WriteLine(LoopingThroughTheMatrix(array, array.GetLength(0), array.GetLength(1)));
+
+
+        }
+
+        static void FillingTheMatrix(int[,] array, int rows, int cols)
+        {
+            for (int i = 0; i < rows; i++)
             {
-                var inputRow = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
-                for (int col = 0; col < m; col++)
+                string[] line = Console.ReadLine().Split(' ');
+                for (int j = 0; j < cols; j++)
                 {
-                    matrix[row, col] = inputRow[col];
+                    array[i, j] = int.Parse(line[j]);
                 }
             }
-            var rows = 0;
-            var cols = 0;
-            var counter = 0;
-            var list = new List<int>();
+        }
 
-            for (int i = 0; i < matrix.GetLength(0); i++)
+
+        //the same result could be achieved with half of the methods (not duplicating directions)
+        static int Forward(int[,] array, int num, int currRow, int currCol)
+        {
+            int count = 0;
+            while (currCol < array.GetLength(1) && array[currRow, currCol] == num)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                {
-                    var currentNumber = matrix[i, j];
+                count++;
+                currCol++;
+            }
+            return count;
+        }
+        static int Backwards(int[,] array, int num, int currRow, int currCol)
+        {
+            int count = 0;
+            while (currCol > -1 && array[currRow, currCol] == num)
+            {
+                count++;
+                currCol--;
+            }
+            return count;
+        }
+        static int Up(int[,] array, int num, int currRow, int currCol)
+        {
+            int count = 0;
+            while (currRow > -1 && array[currRow, currCol] == num)
+            {
+                count++;
+                currRow--;
+            }
+            return count;
+        }
+        static int Down(int[,] array, int num, int currRow, int currCol)
+        {
+            int count = 0;
+            while (currRow < array.GetLength(0) && array[currRow, currCol] == num)
+            {
+                count++;
+                currRow++;
+            }
+            return count;
+        }
+        static int UpLeft(int[,] array, int num, int currRow, int currCol)
+        {
+            int count = 0;
+            while (currRow > -1 && currCol > -1 && array[currRow, currCol] == num)
+            {
+                count++;
+                currCol--;
+                currRow--;
+            }
+            return count;
+        }
+        static int UpRight(int[,] array, int num, int currRow, int currCol)
+        {
+            int count = 0;
+            while (currCol < array.GetLength(1) && currRow > -1 && array[currRow, currCol] == num)
+            {
+                count++;
+                currRow--;
+                currCol++;
+            }
+            return count;
+        }
+        static int DownLeft(int[,] array, int num, int currRow, int currCol)
+        {
+            int count = 0;
+            while (currCol > -1 && currRow < array.GetLength(0) && array[currRow, currCol] == num)
+            {
+                count++;
+                currRow++;
+                currCol--;
+            }
+            return count;
+        }
+        static int DownRight(int[,] array, int num, int currRow, int currCol)
+        {
+            int count = 0;
+            while (currRow < array.GetLength(0) && currCol < array.GetLength(1) && array[currRow, currCol] == num)
+            {
+                count++;
+                currRow++;
+                currCol++;
+            }
+            return count;
+        }
 
-                    if (i > 0 && j > 0)
+        static int LoopingThroughTheMatrix(int[,] array, int rows, int cols)
+        {
+            int max = -1;
+            int count = -1;
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    int num = array[i, j];
+                    int[] results = new int[8] { Forward(array, num, i, j),
+                                                Backwards(array, num, i, j),
+                                                Up(array, num, i, j),
+                                                Down(array, num, i, j),
+                                                UpLeft(array, num, i, j),
+                                                UpRight(array, num, i, j),
+                                                DownLeft(array, num, i, j),
+                                                DownRight(array, num, i, j)
+                    };
+                    count = results.Max();
+                    if (count > max)
                     {
-                        var previousNumber = matrix[i - 1, j - 1];
-                        if (currentNumber == previousNumber)
-                        {
-                            if (list.Contains(currentNumber))
-                            {
-                                list.Add(matrix[i, j]);
-                            }
-                            else
-                            {
-                                list.Add(previousNumber);
-                                list.Add(currentNumber);
-                            }
-                        }
+                        max = count;
                     }
                 }
 
             }
+            return max;
         }
     }
 }
