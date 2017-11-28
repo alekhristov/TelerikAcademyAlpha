@@ -1,164 +1,179 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FillTheMatrix
+﻿namespace FillTheMatrix
 {
-    class Program
+    using System;
+
+    class FillTheMatrix
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var n = int.Parse(Console.ReadLine());
-            var character = char.Parse(Console.ReadLine());
-            var sb = new StringBuilder();
+            var size = int.Parse(Console.ReadLine());
+            var type = char.Parse(Console.ReadLine());
+
+            int[,] matrix = new int[size, size];
+
             var counter = 1;
 
-            int[,] matrix = new int[n, n];
-
-            if (character == 'a')
+            switch (type)
             {
-                for (int row = 0; row < matrix.GetLength(0); row++)
-                {
-                    for (int col = 0; col < matrix.GetLength(1); col++)
-                    {
-                        matrix[col, row] = counter;
-                        counter++;
-                    }
-                }
+                case 'a':
 
-                for (int row = 0; row < matrix.GetLength(0); row++)
-                {
-                    var line = string.Empty;
-                    for (int col = 0; col < matrix.GetLength(1); col++)
+                    for (int col = 0; col < size; col++)
                     {
-                        line += matrix[row, col] + " ";
-                    }
-                    sb.AppendLine(line.TrimEnd());
-                }
-                Console.Write(sb);
-            }
-            else if (character == 'b')
-            {
-                for (int row = 0; row < matrix.GetLength(0); row++)
-                {
-                    for (int col = 0; col < matrix.GetLength(1); col++)
-                    {
-                        if (row % 2 == 0)
+                        for (int row = 0; row < size; row++)
                         {
-                            matrix[col, row] = counter;
+                            matrix[row, col] = counter;
                             counter++;
+                        }
+                    }
+
+                    break;
+
+                case 'b':
+
+                    for (int col = 0; col < size; col++)
+                    {
+                        for (int i = 0; i < size; i++)
+                        {
+                            int row;
+
+                            if (col % 2 == 0)
+                            {
+                                row = i;
+                            }
+                            else
+                            {
+                                row = size - i - 1;
+                            }
+                            matrix[row, col] = counter;
+                            counter++;
+                        }
+                    }
+
+                    break;
+
+                case 'c':
+
+                    for (int i = 0; i < size * 2 - 1; i++)
+                    {
+                        int row;
+                        int col;
+                        if (i < size)
+                        {
+                            row = size - i - 1;
+                            col = 0;
+
+                            for (int j = 0; j <= i; j++)
+                            {
+                                matrix[row, col] = counter;
+                                counter++;
+
+                                row++;
+                                col++;
+                            }
                         }
                         else
                         {
-                            matrix[n - col - 1, row] = counter;
-                            counter++;
+                            row = 0;
+                            col = i - size + 1;
+
+                            for (int j = 0; j < 2 * size - i - 1; j++)
+                            {
+                                matrix[row, col] = counter;
+                                counter++;
+
+                                row++;
+                                col++;
+                            }
                         }
                     }
-                }
 
-                for (int row = 0; row < matrix.GetLength(0); row++)
-                {
-                    var line = string.Empty;
-                    for (int col = 0; col < matrix.GetLength(1); col++)
+                    break;
+
+                case 'd':
+
+                    var direction = "down";
+                    int[] position = { 0, 0 };
+
+                    for (int i = 0; i < size * size; i++)
                     {
-                        line += matrix[row, col] + " ";
+                        matrix[position[0], position[1]] = counter;
+                        counter++;
+
+                        switch (direction)
+                        {
+                            case "down":
+
+                                if ((position[0] + 1 < size) && (matrix[position[0] + 1, position[1]] == 0))
+                                {
+                                    position[0]++;
+                                }
+                                else
+                                {
+                                    direction = "right";
+                                    position[1]++;
+                                }
+
+                                break;
+
+                            case "right":
+
+                                if ((position[1] + 1 < size) && (matrix[position[0], position[1] + 1] == 0))
+                                {
+                                    position[1]++;
+                                }
+                                else
+                                {
+                                    direction = "up";
+                                    position[0]--;
+                                }
+
+                                break;
+
+                            case "up":
+                                if ((position[0] > 0) && (matrix[position[0] - 1, position[1]] == 0))
+                                {
+                                    position[0]--;
+                                }
+                                else
+                                {
+                                    direction = "left";
+                                    position[1]--;
+                                }
+
+                                break;
+
+                            case "left":
+
+                                if ((position[1] > 0) && (matrix[position[0], position[1] - 1] == 0))
+                                {
+                                    position[1]--;
+                                }
+                                else
+                                {
+                                    direction = "down";
+                                    position[0]++;
+                                }
+
+                                break;
+
+                            default:
+                                break;
+                        }
                     }
-                    sb.AppendLine(line.TrimEnd());
-                }
-                Console.Write(sb);
+                    break;
+
+                default:
+                    break;
             }
-            else if (character == 'c')
+
+            for (int row = 0; row < size; row++)
             {
-                var rows = 0;
-                var cols = 0;
-
-                //populate values under the main diagonal
-                for (int i = n - 1; i >= 0; i--)
+                for (int col = 0; col < size - 1; col++)
                 {
-                    rows = i;
-                    cols = 0;
-                    while (rows < n && cols < n)
-                    {
-                        matrix[rows, cols] = counter;
-
-                        rows++;
-                        cols++;
-                        counter++;
-                    }
+                    Console.Write(matrix[row, col]);
+                    Console.Write(" ");
                 }
-
-                //populate values over the main diagonal
-                for (int i = 1; i < n; i++)
-                {
-                    rows = i;
-                    cols = 0;
-                    while (rows < n && cols < n)
-                    {
-                        matrix[cols, rows] = counter;
-
-                        cols++;
-                        rows++;
-                        counter++;
-                    }
-                }
-
-                for (rows = 0; rows < n; rows++)
-                {
-                    var line = string.Empty;
-                    for (cols = 0; cols < n; cols++)
-                    {
-                        line += matrix[rows, cols] + " ";
-                    }
-                    sb.AppendLine(line.TrimEnd());
-                }
-                Console.Write(sb);
-
-            }
-            else if (character == 'd')
-            {
-                for (int i = 0; i < n; i++) // get top rows and cols
-                {
-                    for (int j = i; j < n - i; j++)
-                    {
-                        matrix[i, j] = counter;
-                        counter++;
-                    }
-
-                    for (int j = 0; j < n - 1 - i * 2; j++) // get right coloumns 
-                    {
-                        matrix[j + 1 + i, n - i - 1] = counter;
-                        counter++;
-                    }
-
-
-                    for (int j = 0; j < n - 1 - i * 2; j++) // get botom rows and cols
-                    {
-                        matrix[n - 1 - i, n - j - 2 - i] = counter;
-                        counter++;
-                    }
-
-
-                    for (int j = 0; j < n - 2 - i * 2; j++) //get left cols
-                    {
-                        matrix[n - j - 2 - i, i] = counter;
-                        counter++;
-                    }
-                }
-
-
-                for (int row = 0; row < n; row++) // print
-                {
-                    var line = string.Empty;
-
-                    for (int col = 0; col < n; col++)
-                    {
-                        line += matrix[col, row] + " "; 
-                    }
-                    sb.AppendLine(line.TrimEnd());
-                }
-                Console.Write(sb);
+                Console.WriteLine(matrix[row, size - 1]);
             }
         }
     }
