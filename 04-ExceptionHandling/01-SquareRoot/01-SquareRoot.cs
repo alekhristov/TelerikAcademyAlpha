@@ -9,6 +9,7 @@ namespace _01_SquareRoot
             try
             {
                 var input = double.Parse(Console.ReadLine());
+
                 if (input < 0)
                 {
                     throw new Exception();
