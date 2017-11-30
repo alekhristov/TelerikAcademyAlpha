@@ -11,7 +11,7 @@ namespace _04_GoshoCode
             var text = string.Empty;
             var goForward = false;
             var result = string.Empty;
-            var sum = 0;
+            var sumResult = 0;
 
             for (int i = 0; i < n; i++)
             {
@@ -59,10 +59,10 @@ namespace _04_GoshoCode
             {
                 if (!char.IsWhiteSpace(c))
                 {
-                    sum += c * word.Length;
+                    sumResult += c * word.Length;
                 }
             }
-            Console.WriteLine(sum);
+            Console.WriteLine(sumResult);
         }
     }
 }
