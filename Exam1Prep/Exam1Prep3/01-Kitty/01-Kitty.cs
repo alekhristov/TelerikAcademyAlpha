@@ -5,76 +5,85 @@ namespace _01_Kitty
 {
     class Program
     {
-        static int soulsCount = 0;
-        static int foodCount = 0;
-        static int deadlocksCount = 0;
-        static int currentPosition = 0;
-        static bool deadlocked = false;
-        static int jumps = 0;
-        static char[] input = Console.ReadLine().ToArray();
+        static int soulsCount;
+        static int foodCount;
+        static int deadlocksCount;
+        static long currentPosition;
+        static bool deadlocked;
+        static int jumps;
+        static string input = Console.ReadLine();
+        static char[] field = input.ToCharArray();
 
         static void Main(string[] args)
         {
-            var kittyPath = Console.ReadLine().Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
-            CheckWhatTheKittyDoes(input[currentPosition]);
+            var kittyPath = Console.ReadLine()
+                .Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
+                .Select(long.Parse)
+                .ToArray();
+
+            WhatKittyDoesNext(field[0], 0);
+
+            if (deadlocked == true)
+            {
+                return;
+            }
 
             for (int i = 0; i < kittyPath.Length; i++)
             {
-                var currentMove = kittyPath[i];
-                currentPosition = (currentPosition + currentMove) % input.Length;
+                var nextPosition = currentPosition + kittyPath[i];
+                currentPosition = nextPosition;
 
-                if (currentPosition > input.Length - 1)
+                while (nextPosition < 0)
                 {
-                    currentPosition -= input.Length;
+                    nextPosition += field.Length;
                 }
-                else if (currentPosition < 0)
+                while (nextPosition > field.Length - 1)
                 {
-                    currentPosition += input.Length;
+                    nextPosition -= field.Length;
                 }
 
-                CheckWhatTheKittyDoes(input[currentPosition]);
-
+                jumps++;
+                WhatKittyDoesNext(field[nextPosition], nextPosition);
                 if (deadlocked == true)
                 {
-                    Console.WriteLine("You are deadlocked, you greedy kitty!");
-                    Console.WriteLine($"Jumps before deadlock: {jumps}");
                     return;
                 }
-                jumps++;
             }
-
-            Console.WriteLine($"Coder souls collected: {soulsCount}");
-            Console.WriteLine($"Food collected: {foodCount}");
-            Console.WriteLine($"Deadlocks: {deadlocksCount}");
-
+            if (!deadlocked)
+            {
+                Console.WriteLine($"Coder souls collected: {soulsCount}");
+                Console.WriteLine($"Food collected: {foodCount}");
+                Console.WriteLine($"Deadlocks: {deadlocksCount}");
+            }
         }
 
-        private static void CheckWhatTheKittyDoes(char currentElement)
+        private static void WhatKittyDoesNext(char c, long currentPosition)
         {
-            switch (currentElement)
+            switch (c)
             {
                 case '@':
                     soulsCount++;
-                    input[currentPosition] = '-';
+                    field[currentPosition] = '-';
                     break;
 
                 case '*':
                     foodCount++;
-                    input[currentPosition] = '-';
+                    field[currentPosition] = '-';
                     break;
 
                 case 'x':
-                    deadlocksCount++;
                     if (currentPosition % 2 == 0)
                     {
                         if (soulsCount > 0)
                         {
                             soulsCount--;
-                            input[currentPosition] = '@';
+                            field[currentPosition] = '@';
                         }
                         else
                         {
                             deadlocked = true;
+                            Console.WriteLine($"You are deadlocked, you greedy kitty!");
+                            Console.WriteLine($"Jumps before deadlock: {jumps}");
                         }
                     }
                     else
@@ -82,13 +91,16 @@ namespace _01_Kitty
                         if (foodCount > 0)
                         {
                             foodCount--;
-                            input[currentPosition] = '*';
+                            field[currentPosition] = '*';
                         }
                         else
                         {
                             deadlocked = true;
+                            Console.WriteLine($"You are deadlocked, you greedy kitty!");
+                            Console.WriteLine($"Jumps before deadlock: {jumps}");
                         }
                     }
+                    deadlocksCount++;
                     break;
                 default:
                     break;
