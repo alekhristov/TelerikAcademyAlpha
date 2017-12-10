@@ -1,18 +1,11 @@
 ﻿using Bytes2you.Validation;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _02_ClassesPart2
 {
     class Matrix<T>
     {
         private T[,] matrix;
-        public static readonly DBBool Null = new DBBool(0);
-        public static readonly DBBool False = new DBBool(-1);
-        public static readonly DBBool True = new DBBool(1);
 
         public Matrix(int totalRows, int totalCols)
         {
