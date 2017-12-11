@@ -35,7 +35,8 @@ namespace _03_AnimalHierarchy
             //Console.WriteLine(dog.Name);
             //Console.WriteLine(dog.Sex);
             //Console.WriteLine(dog.MakesSound());
-            //CalculateAverageAge(listOfAnimals);
+
+            CalculateAverageAge(listOfAnimals);
         }
 
         private static void CalculateAverageAge(List<Animal> listOfAnimals)
