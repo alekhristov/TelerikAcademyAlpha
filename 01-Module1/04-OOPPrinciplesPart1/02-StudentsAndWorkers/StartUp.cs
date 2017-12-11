@@ -36,12 +36,12 @@ namespace _02_StudentsAndWorkers
             listOfStudents.Add(student9);
             listOfStudents.Add(student10);
 
-            foreach (var student in listOfStudents.OrderBy(s => s.Grade).ThenBy(s => s.FullName()))
-            {
-                Console.WriteLine($"Student name: {student.FullName()}");
-                Console.WriteLine($"OOP Exam grade: {student.Grade:f2}");
-                Console.WriteLine("--------------------------");
-            }
+            //foreach (var student in listOfStudents.OrderBy(s => s.Grade).ThenBy(s => s.FullName()))
+            //{
+            //    Console.WriteLine($"Student name: {student.FullName()}");
+            //    Console.WriteLine($"OOP Exam grade: {student.Grade:f2}");
+            //    Console.WriteLine("--------------------------");
+            //}
 
             var listOfWorkers = new List<Worker>();
 
@@ -69,11 +69,23 @@ namespace _02_StudentsAndWorkers
             listOfWorkers.Add(worker9);
             listOfWorkers.Add(worker10);
 
-            foreach (var worker in listOfWorkers.OrderByDescending(w => w.MoneyPerHour()).ThenBy(w => w.FullName()))
+            //foreach (var worker in listOfWorkers.OrderByDescending(w => w.MoneyPerHour()).ThenBy(w => w.FullName()))
+            //{
+            //    Console.WriteLine($"Worker name: {worker.FullName()}");
+            //    Console.WriteLine($"{worker.FirstName} makes ${worker.MoneyPerHour():f2} per hour");
+            //    Console.WriteLine();
+            //}
+
+            var mergedList = new List<Human>();
+            mergedList.AddRange(listOfStudents);
+            mergedList.AddRange(listOfWorkers);
+
+            var counter = 1;
+
+            foreach (var human in mergedList.OrderBy(h => h.FullName()))
             {
-                Console.WriteLine($"Worker name: {worker.FullName()}");
-                Console.WriteLine($"{worker.FirstName} makes ${worker.MoneyPerHour():f2} per hour");
-                Console.WriteLine();
+                Console.WriteLine($"{counter}. {human.FullName()}");
+                counter++;
             }
         }
     }
