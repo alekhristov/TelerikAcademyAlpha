@@ -12,6 +12,9 @@
 
         public string LastName { get; set; }
 
-        public abstract string FullName();
+        public string FullName()
+        {
+            return $"{FirstName} {LastName}";
+        }
     }
 }

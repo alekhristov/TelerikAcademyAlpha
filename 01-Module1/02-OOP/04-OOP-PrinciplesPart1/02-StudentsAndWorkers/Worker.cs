@@ -16,11 +16,6 @@
 
         public double WorkHoursPerDay { get; set; }
 
-        public override string FullName()
-        {
-            return $"{FirstName} {LastName}";
-        }
-
         public double MoneyPerHour()
         {
             return (WeekSalary / 5) / WorkHoursPerDay;

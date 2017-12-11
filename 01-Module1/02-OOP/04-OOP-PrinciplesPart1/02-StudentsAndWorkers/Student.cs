@@ -12,10 +12,5 @@
         }
 
         public double Grade { get; set; }
-
-        public override string FullName()
-        {
-            return $"{FirstName} {LastName}";
-        }
     }
 }
