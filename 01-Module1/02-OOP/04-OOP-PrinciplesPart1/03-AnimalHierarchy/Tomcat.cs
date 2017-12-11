@@ -1,10 +1,12 @@
 ﻿namespace _03_AnimalHierarchy
 {
-    class Tomcat : Cat, ISound
+    class Tomcat : Cat
     {
-        public Tomcat(int age, string name) : base(age, name)
+        private const string sound = "Tommy-tom!";
+
+        public Tomcat(uint age, string name) : base(age, name, Sex.Male)
         {
-            this.Sex = 'M';
+            this.Sound = sound;
         }
     }
 }

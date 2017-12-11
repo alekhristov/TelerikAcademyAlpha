@@ -2,14 +2,11 @@
 {
     class Cat : Animal
     {
-        public Cat(int age, string name, char sex) : base(age, name, sex)
-        {
-            this.Sound = "Meoow-Meooow!";
-        }
+        private const string sound = "Meoow-Meooow!";
 
-        public Cat(int age, string name) : base(age, name)
+        public Cat(uint age, string name, Sex sex) : base(age, name, sex)
         {
-            this.Sound = "Meoow-Meooow!";
+            this.Sound = sound;
         }
     }
 }

@@ -2,9 +2,11 @@
 {
     class Dog : Animal
     {
-        public Dog(int age, string name, char sex) : base(age, name, sex)
+        private const string sound = "Bau-Bau!";
+
+        public Dog(uint age, string name, Sex sex) : base(age, name, sex)
         {
-            this.Sound = "Bau-Bau!";
+            this.Sound = sound;
         }
     }
 }

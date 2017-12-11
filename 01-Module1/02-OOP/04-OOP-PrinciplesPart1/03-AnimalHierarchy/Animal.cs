@@ -1,27 +1,21 @@
 ﻿namespace _03_AnimalHierarchy
 {
-    class Animal : IAnimal, ISound
+    abstract class Animal : ISound
     {
-        public Animal(int age, string name)
-        {
-            this.Age = age;
-            this.Name = name;
-        }
-
-        public Animal(int age, string name, char sex)
+        public Animal(uint age, string name, Sex sex)
         {
             this.Age = age;
             this.Name = name;
             this.Sex = sex;
         }
 
-        public int Age { get; set; }
+        public uint Age { get; protected set; }
 
-        public string Name { get; set; }
+        public string Name { get; protected set; }
 
-        public char Sex { get; set; }
+        public Sex Sex { get; protected set; }
 
-        public string Sound { get; protected set; }
+        protected string Sound { get; set; }
 
         public string MakesSound()
         {
