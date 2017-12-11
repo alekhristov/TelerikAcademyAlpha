@@ -102,24 +102,23 @@ namespace _02_ClassesPart2
             return newMatrix;
         }
 
-        //public static bool operator true(Matrix<int> matrix1)
-        //{
-        //    for (int row = 0; row < matrix1.TotalRows; row++)
-        //    {
-        //        for (int col = 0; col < matrix1.TotalCols; col++)
-        //        {
-        //            if ((!char.IsDigit(char.Parse(matrix1[row, col].ToString()))))
-        //            {
-        //                throw new InvalidOperationException("Can not perform this operation!");
-        //            }
-        //            if ((matrix1[row, col] != 0))
-        //            {
-        //                return true;
-        //            }
-        //        }
-        //    }
-        //    return false;
-        //}
+        public static bool operator true(Matrix<T> matrix)
+        {
+            return BooleanOperator(matrix, true);
+        }
 
+        public static bool operator false(Matrix<T> matrix)
+        {
+            return BooleanOperator(matrix, false);
+        }
+
+        private static bool BooleanOperator(Matrix<T> matrix, bool op)
+        {
+            foreach (T element in matrix.matrix)
+                if (!element.Equals(default(T)))
+                    return op;
+
+            return !op;
+        }
     }
 }

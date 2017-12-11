@@ -16,7 +16,7 @@ namespace _03_AnimalHierarchy
             new Dog(6, "Ayra", Sex.Female),
             new Frog(2, "Jaborana", Sex.Female),
             new Frog(5, "Jabcho", Sex.Male),
-            new Frog(2, "Giolcho", Sex.Male),
+            new Frog(2, "Giolcho", Sex.NotSpecified),
             new Cat(12, "Pisana", Sex.Female),
             new Cat(16, "Pijo", Sex.Male),
             new Cat(1, "Puhi", Sex.Male),
