@@ -9,11 +9,11 @@
             this.Sex = sex;
         }
 
-        public uint Age { get; protected set; }
+        public uint Age { get; private set; }
 
-        public string Name { get; protected set; }
+        public string Name { get; private set; }
 
-        public Sex Sex { get; protected set; }
+        public Sex Sex { get; private set; }
 
         protected string Sound { get; set; }
 
