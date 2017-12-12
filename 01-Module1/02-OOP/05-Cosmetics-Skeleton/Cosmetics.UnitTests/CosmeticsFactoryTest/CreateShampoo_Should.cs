@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace Cosmetics.UnitTests.CosmeticsFactoryTest
 {
     [TestClass]
-    public class CreateToothpaste_Should
+    public class CreateShampoo_Should
     {
         [TestMethod]
         public void ReturnInstanceOfTypeProduct()

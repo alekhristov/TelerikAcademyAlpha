@@ -10,7 +10,7 @@ namespace Cosmetics.UnitTests.CosmeticsFactoryTest
     public class CreateToothpaste_Should
     {
         [TestMethod]
-        public void ReturnInstanceOfTypeProduct()
+        public void ReturnInstanceOfTypeProductToothpaste()
         {
             // Arrange, Act, Assert
             var factory = new CosmeticsFactory();
