@@ -1,6 +1,6 @@
 ﻿namespace _01_SchoolClasses
 {
-    class Person : IPerson
+    abstract class Person : IPerson
     {
         public Person(string firstName, string lastName)
         {
