@@ -2,7 +2,6 @@
 using Cosmetics.Common;
 using Cosmetics.Contracts;
 using Cosmetics.Core.Contracts;
-using Cosmetics.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;

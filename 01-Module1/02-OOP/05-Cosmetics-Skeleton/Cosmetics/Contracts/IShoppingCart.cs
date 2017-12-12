@@ -1,5 +1,4 @@
-﻿using Cosmetics.Contracts;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Cosmetics.Contracts
 {

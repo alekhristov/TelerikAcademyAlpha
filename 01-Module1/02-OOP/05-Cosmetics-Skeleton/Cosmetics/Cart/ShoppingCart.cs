@@ -1,6 +1,5 @@
 ﻿using Bytes2you.Validation;
 using Cosmetics.Contracts;
-using Cosmetics.Products;
 using System.Collections.Generic;
 using System.Linq;
 

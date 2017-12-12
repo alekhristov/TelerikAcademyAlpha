@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CosmeticsFactoryTest\CreateCream_Should.cs" />
     <Compile Include="CosmeticsFactoryTest\CreateShoppingCart_Should.cs" />
     <Compile Include="CosmeticsFactoryTest\CreateToothpaste_Should.cs" />
     <Compile Include="CosmeticsFactoryTest\CreateShampoo_Should.cs" />

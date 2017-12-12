@@ -1,23 +1,24 @@
-﻿using Cosmetics.Contracts;
+﻿using Cosmetics.Common;
+using Cosmetics.Contracts;
 using Cosmetics.Core.Engine;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Cosmetics.UnitTests.CosmeticsFactoryTest
 {
     [TestClass]
-    public class CreateShoppingCart_Should
+    public class CreateCream_Should
     {
         [TestMethod]
-        public void ReturnInstanceOfTypeShoppingCart()
+        public void ReturnInstanceOfTypeProduct()
         {
             // Arrange, Act, Assert
             var factory = new CosmeticsFactory();
 
             // Act
-            var cart = factory.CreateShoppingCart();
+            var product = factory.CreateCream("name", "brand", 10, GenderType.Unisex, ScentType.Rose);
 
             // Assert
-            Assert.IsInstanceOfType(cart, typeof(IShoppingCart));
+            Assert.IsInstanceOfType(product, typeof(IProduct));
         }
     }
 }
