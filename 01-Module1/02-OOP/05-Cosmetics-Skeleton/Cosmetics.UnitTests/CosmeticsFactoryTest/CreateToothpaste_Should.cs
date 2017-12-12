@@ -2,11 +2,12 @@
 using Cosmetics.Contracts;
 using Cosmetics.Core.Engine;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace Cosmetics.UnitTests.CosmeticsFactoryTest
 {
     [TestClass]
-    public class CreateShampoo_Should
+    public class CreateToothpaste_Should
     {
         [TestMethod]
         public void ReturnInstanceOfTypeProduct()
@@ -15,7 +16,7 @@ namespace Cosmetics.UnitTests.CosmeticsFactoryTest
             var factory = new CosmeticsFactory();
 
             // Act
-            var product = factory.CreateShampoo("name", "brand", 10, GenderType.Unisex, 10, UsageType.EveryDay);
+            var product = factory.CreateToothpaste("name", "brand", 10, GenderType.Unisex, "calcium,fluorid".Select(x => x.ToString()).ToList());
 
             // Assert
             Assert.IsInstanceOfType(product, typeof(IProduct));
