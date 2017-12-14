@@ -10,12 +10,12 @@
     {
         ICategory CreateCategory(string name);
 
-        Shampoo CreateShampoo(string name, string brand, decimal price, GenderType gender, uint milliliters, UsageType usage);
+        IProduct CreateShampoo(string name, string brand, decimal price, GenderType gender, uint milliliters, UsageType usage);
 
-        Toothpaste CreateToothpaste(string name, string brand, decimal price, GenderType gender, IList<string> ingredients);
+        IProduct CreateToothpaste(string name, string brand, decimal price, GenderType gender, IList<string> ingredients);
 
-        Cream CreateCream(string name, string brand, decimal price, GenderType gender, ScentType scent);
+        IProduct CreateCream(string name, string brand, decimal price, GenderType gender, ScentType scent);
 
-        ShoppingCart CreateShoppingCart();
+        IShoppingCart CreateShoppingCart();
     }
 }

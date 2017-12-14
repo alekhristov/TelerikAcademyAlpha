@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-Shapes", "01-Shapes\01-Shapes.csproj", "{37C72B70-4BB7-44BC-A88E-D8C771EAD8AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-BankAccounts", "02-BankAccounts\02-BankAccounts.csproj", "{F2D56526-B096-482A-B9DB-DA0DE805D54B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37C72B70-4BB7-44BC-A88E-D8C771EAD8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C72B70-4BB7-44BC-A88E-D8C771EAD8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C72B70-4BB7-44BC-A88E-D8C771EAD8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C72B70-4BB7-44BC-A88E-D8C771EAD8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D56526-B096-482A-B9DB-DA0DE805D54B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D56526-B096-482A-B9DB-DA0DE805D54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D56526-B096-482A-B9DB-DA0DE805D54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D56526-B096-482A-B9DB-DA0DE805D54B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DEF8277-D860-4534-81BC-D3CC1ACB9817}
+	EndGlobalSection
+EndGlobal

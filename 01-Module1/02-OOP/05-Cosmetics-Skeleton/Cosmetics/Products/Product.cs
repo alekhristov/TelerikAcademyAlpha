@@ -13,7 +13,7 @@ namespace Cosmetics.Products
         private decimal price;
         private GenderType gender;
 
-        public Product(string name, string brand, decimal price, GenderType gender)
+        protected Product(string name, string brand, decimal price, GenderType gender)
         {
             this.Name = name;
             this.Brand = brand;
