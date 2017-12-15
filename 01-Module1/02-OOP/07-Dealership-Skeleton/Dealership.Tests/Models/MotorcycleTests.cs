@@ -29,30 +29,30 @@ namespace Dealership.Tests.Models
         [TestMethod]
         public void Motorcycle_Constructor_ShouldThrow_WhenMakeIsNull()
         {
-            Assert.ThrowsException<ArgumentNullException>(() => new Motorcycle(null, "model", 10, "category"));
+            Assert.ThrowsException<NullReferenceException>(() => new Motorcycle(null, "model", 10, "category"));
         }
 
         [TestMethod]
         public void Motorcycle_Constructor_ShouldThrow_WhenMakeLenghtIsBelow2()
         {
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Motorcycle("1", "model", 10, "category"));
+            Assert.ThrowsException<ArgumentException>(() => new Motorcycle("1", "model", 10, "category"));
         }
 
         [TestMethod]
         public void Motorcycle_Constructor_ShouldThrow_WhenMakeLenghtIsAbove15()
         {
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Motorcycle("1234567890123456", "model", 10, "category"));
+            Assert.ThrowsException<ArgumentException>(() => new Motorcycle("1234567890123456", "model", 10, "category"));
         }
 
 
         [TestMethod]
         public void Motorcycle_Constructor_ShouldThrow_WhenModelIsNull()
         {
-            Assert.ThrowsException<ArgumentException>(() => new Motorcycle("make", null, 10, "category"));
+            Assert.ThrowsException<ArgumentNullException>(() => new Motorcycle("make", null, 10, "category"));
         }
 
         [TestMethod]
-        public void Motorcycle_Constructor_ShouldThrow_WhenModelLenghtIsBelow2()
+        public void Motorcycle_Constructor_ShouldThrow_WhenModelLenghtIsBelow1()
         {
             Assert.ThrowsException<ArgumentException>(() => new Motorcycle("make", "", 10, "category"));
         }
@@ -78,7 +78,7 @@ namespace Dealership.Tests.Models
         [TestMethod]
         public void Motorcycle_Constructor_ShouldThrow_WhenCategoryIsNull()
         {
-            Assert.ThrowsException<ArgumentException>(() => new Motorcycle("make", "model", 10, null));
+            Assert.ThrowsException<ArgumentNullException>(() => new Motorcycle("make", "model", 10, null));
         }
 
         [TestMethod]

@@ -20,7 +20,7 @@ namespace Dealership.Tests.Models
         [TestMethod]
         public void Comment_Constructor_ShouldThrow_WhenContentIsNull()
         {
-            Assert.ThrowsException<ArgumentNullException>(() => new Comment(null));
+            Assert.ThrowsException<NullReferenceException>(() => new Comment(null));
         }        
     }
 }

@@ -29,30 +29,30 @@ namespace Dealership.Tests.Models
         [TestMethod]
         public void Truck_Constructor_ShouldThrow_WhenMakeIsNull()
         {
-            Assert.ThrowsException<ArgumentNullException>(() => new Truck(null, "model", 10, 10));
+            Assert.ThrowsException<NullReferenceException>(() => new Truck(null, "model", 10, 10));
         }
 
         [TestMethod]
         public void Truck_Constructor_ShouldThrow_WhenMakeLenghtIsBelow2()
         {
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Truck("1", "model", 10, 10));
+            Assert.ThrowsException<ArgumentException>(() => new Truck("1", "model", 10, 10));
         }
 
         [TestMethod]
         public void Truck_Constructor_ShouldThrow_WhenMakeLenghtIsAbove15()
         {
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Truck("1234567890123456", "model", 10, 10));
+            Assert.ThrowsException<ArgumentException>(() => new Truck("1234567890123456", "model", 10, 10));
         }
 
 
         [TestMethod]
         public void Truck_Constructor_ShouldThrow_WhenModelIsNull()
         {
-            Assert.ThrowsException<ArgumentException>(() => new Truck("make", null, 10, 10));
+            Assert.ThrowsException<ArgumentNullException>(() => new Truck("make", null, 10, 10));
         }
 
         [TestMethod]
-        public void Truck_Constructor_ShouldThrow_WhenModelLenghtIsBelow2()
+        public void Truck_Constructor_ShouldThrow_WhenModelLenghtIsBelow1()
         {
             Assert.ThrowsException<ArgumentException>(() => new Truck("make", "", 10, 10));
         }

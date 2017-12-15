@@ -29,30 +29,30 @@ namespace Dealership.Tests.Models
         [TestMethod]
         public void Car_Constructor_ShouldThrow_WhenMakeIsNull()
         {
-            Assert.ThrowsException<ArgumentNullException>(() => new Car(null, "model", 10, 4));
+            Assert.ThrowsException<NullReferenceException>(() => new Car(null, "model", 10, 4));
         }
 
         [TestMethod]
         public void Car_Constructor_ShouldThrow_WhenMakeLenghtIsBelow2()
         {
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Car("1", "model", 10, 4));
+            Assert.ThrowsException<ArgumentException>(() => new Car("1", "model", 10, 4));
         }
 
         [TestMethod]
         public void Car_Constructor_ShouldThrow_WhenMakeLenghtIsAbove15()
         {
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Car("1234567890123456", "model", 10, 4));
+            Assert.ThrowsException<ArgumentException>(() => new Car("1234567890123456", "model", 10, 4));
         }
 
 
         [TestMethod]
         public void Car_Constructor_ShouldThrow_WhenModelIsNull()
         {
-            Assert.ThrowsException<ArgumentException>(() => new Car("make", null, 10, 4));
+            Assert.ThrowsException<ArgumentNullException>(() => new Car("make", null, 10, 4));
         }
 
         [TestMethod]
-        public void Car_Constructor_ShouldThrow_WhenModelLenghtIsBelow2()
+        public void Car_Constructor_ShouldThrow_WhenModelLenghtIsBelow1()
         {
             Assert.ThrowsException<ArgumentException>(() => new Car("make", "", 10, 4));
         }
