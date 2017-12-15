@@ -1,5 +1,4 @@
-﻿using Bytes2you.Validation;
-using Dealership.Contracts;
+﻿using Dealership.Contracts;
 using System;
 
 namespace Dealership.Models

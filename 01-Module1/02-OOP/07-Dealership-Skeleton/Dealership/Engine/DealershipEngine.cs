@@ -1,5 +1,4 @@
-﻿using Dealership.Common;
-using Dealership.Common.Enums;
+﻿using Dealership.Common.Enums;
 using Dealership.Contracts;
 using Dealership.Factories;
 using System;

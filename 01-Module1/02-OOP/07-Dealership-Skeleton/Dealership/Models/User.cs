@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Dealership.Models
 {
@@ -143,10 +142,16 @@ namespace Dealership.Models
 
         public void AddComment(IComment commentToAdd, IVehicle vehicleToAddComment)
         {
-            if (vehicleToAddComment != null && commentToAdd != null)
+            if (vehicleToAddComment == null)
             {
-                vehicleToAddComment.Comments.Add(commentToAdd);
+                throw new ArgumentNullException("Vehicle does not exist!");
             }
+
+            if (commentToAdd == null)
+            {
+                throw new ArgumentNullException("Comment does not exist!");
+            }
+            vehicleToAddComment.Comments.Add(commentToAdd);
         }
 
         public void AddVehicle(IVehicle vehicle)
@@ -172,14 +177,15 @@ namespace Dealership.Models
 
             if (!Vehicles.Any())
             {
-                throw new ArgumentNullException("--NO VEHICLES--");
+                sb.AppendLine("--NO VEHICLES--");
+                return sb.ToString().TrimEnd();
             }
 
             var counter = 1;
 
             foreach (var vehicle in Vehicles)
             {
-                sb.AppendLine($"  {counter}. {vehicle.Type}:");
+                sb.AppendLine($"{counter}. {vehicle.Type}:");
                 sb.AppendLine($"  Make: {vehicle.Make}");
                 sb.AppendLine($"  Model: {vehicle.Model}");
                 sb.AppendLine($"  Wheels: {vehicle.Wheels}");
@@ -196,11 +202,14 @@ namespace Dealership.Models
                         sb.AppendLine($"    {comment.Content}");
                         sb.AppendLine($"      User: {comment.Author}");
                         sb.AppendLine("    ----------");
-                        sb.AppendLine("    ----------");
+
+                        if (vehicle.Comments.Count - 1 > vehicle.Comments.IndexOf(comment))
+                        {
+                            sb.AppendLine("    ----------");
+                        }
                     }
 
                     sb.AppendLine("    --COMMENTS--");
-                    sb.AppendLine("    ----------  ");
                 }
                 else
                 {
@@ -219,16 +228,20 @@ namespace Dealership.Models
             {
                 throw new ArgumentException("Cannot remove comment! The comment does not exist!");
             }
-            vehicleToRemoveComment.Comments.Remove(commentToRemove);
 
             if (commentToRemove.Author != Username)
             {
                 throw new ArgumentException("You are not the author!");
             }
+            vehicleToRemoveComment.Comments.Remove(commentToRemove);
         }
 
         public void RemoveVehicle(IVehicle vehicle)
         {
+            if (vehicle == null)
+            {
+                throw new ArgumentNullException("Vehicle does not exist!");
+            }
             Vehicles.Remove(vehicle);
         }
 

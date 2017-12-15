@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Bytes2you.Validation;
+﻿using Bytes2you.Validation;
 using Dealership.Common.Enums;
 using Dealership.Contracts;
 using System;
