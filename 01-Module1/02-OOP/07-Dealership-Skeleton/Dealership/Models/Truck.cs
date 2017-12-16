@@ -21,7 +21,7 @@ namespace Dealership.Models
             {
                 return this.weightCapacity;
             }
-            set
+            private set
             {
                 if (value < 1 || value > 100)
                 {

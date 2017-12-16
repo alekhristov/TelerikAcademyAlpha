@@ -7,17 +7,17 @@ namespace Dealership.Factories
 {
     public class DealershipFactory : IDealershipFactory
     {
-        public Car CreateCar(string make, string model, decimal price, int seats)
+        public ICar CreateCar(string make, string model, decimal price, int seats)
         {
             return new Car(make, model, price, seats);
         }
 
-        public Motorcycle CreateMotorcycle(string make, string model, decimal price, string category)
+        public IMotorcycle CreateMotorcycle(string make, string model, decimal price, string category)
         {
             return new Motorcycle(make, model, price, category);
         }
 
-        public Truck CreateTruck(string make, string model, decimal price, int weightCapacity)
+        public ITruck CreateTruck(string make, string model, decimal price, int weightCapacity)
         {
             return new Truck(make, model, price, weightCapacity);
         }

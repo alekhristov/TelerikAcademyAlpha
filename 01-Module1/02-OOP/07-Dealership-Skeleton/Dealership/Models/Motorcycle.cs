@@ -22,7 +22,7 @@ namespace Dealership.Models
             {
                 return this.category;
             }
-            set
+            private set
             {
                 Guard.WhenArgument(value, "You need to enter a category!").IsNull().Throw();
                 if (value.Length < 3 || value.Length > 10)

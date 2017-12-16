@@ -21,7 +21,7 @@ namespace Dealership.Models
             {
                 return this.seats;
             }
-            protected set
+            private set
             {
                 if (value < 1 || value > 10)
                 {

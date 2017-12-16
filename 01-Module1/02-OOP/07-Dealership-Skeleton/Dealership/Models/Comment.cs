@@ -20,7 +20,7 @@ namespace Dealership.Models
             {
                 return this.content;
             }
-            set
+            private set
             {
                 if (value.Length < 3 || value.Length > 200)
                 {

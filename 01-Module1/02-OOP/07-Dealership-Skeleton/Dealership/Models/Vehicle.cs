@@ -43,7 +43,7 @@ namespace Dealership.Models
             }
             set
             {
-                if (!Enum.IsDefined(typeof(VehicleType), value)) throw new ArgumentException("Invalid vehicle type");
+                if (!Enum.IsDefined(typeof(VehicleType), value)) throw new ArgumentException("Invalid vehicle type!");
                 this.type = value;
             }
         }
@@ -88,7 +88,7 @@ namespace Dealership.Models
             {
                 return this.comments;
             }
-            set
+            private set
             {
                 Guard.WhenArgument(value, "You need to enter a comment").IsNull().Throw();
                 this.comments = value;
