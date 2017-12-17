@@ -24,7 +24,5 @@ namespace Dealership.Contracts
         void AddComment(IComment commentToAdd, IVehicle vehicleToAddComment);
 
         void RemoveComment(IComment commentToRemove, IVehicle vehicleToRemoveComment);
-
-        string PrintVehicles();
     }
 }

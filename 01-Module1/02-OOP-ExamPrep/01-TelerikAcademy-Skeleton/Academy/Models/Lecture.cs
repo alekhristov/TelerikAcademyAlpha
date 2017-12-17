@@ -43,7 +43,7 @@ namespace Academy.Models.Contracts
         public ITrainer Trainer
         {
             get { return this.trainer; }
-            private set
+            set
             {
                 this.trainer = value;
             }

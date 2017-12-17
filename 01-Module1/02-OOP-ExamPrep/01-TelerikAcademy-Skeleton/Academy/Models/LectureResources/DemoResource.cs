@@ -8,7 +8,7 @@ namespace Academy.Models.LectureResources
 {
     class DemoResource : LectureResource
     {
-        public DemoResource(string name, string url, DateTime uploadedOn) : base(name, url)
+        public DemoResource(string name, string url) : base(name, url)
         {
             this.Type = "Demo";
         }

@@ -37,7 +37,7 @@ namespace Academy.Models.LectureResources
             }
             set
             {
-                if (value.Length < 3 || value.Length > 15) throw new ArgumentException("RResource url should be between 5 and 150 symbols long!");
+                if (value.Length < 5 || value.Length > 150) throw new ArgumentException("Resource url should be between 5 and 150 symbols long!");
                 this.url = value ?? throw new ArgumentNullException("You must enter a URL!");
             }
         }
@@ -57,7 +57,7 @@ namespace Academy.Models.LectureResources
         public override string ToString()
         {
             var sb = new StringBuilder();
-
+            sb.AppendLine("    * Resource:");
             sb.AppendLine($"     - Name: {this.Name}");
             sb.AppendLine($"     - Url: {this.Url}");
             sb.AppendLine($"     - Type: {this.Type}");

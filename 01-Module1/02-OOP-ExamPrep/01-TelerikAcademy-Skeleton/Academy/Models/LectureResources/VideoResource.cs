@@ -10,9 +10,10 @@ namespace Academy.Models.LectureResources
     {
         private DateTime uploadedOn;
 
-        public VideoResource(string name, string url) : base(name, url)
+        public VideoResource(string name, string url, DateTime uploadedOn) : base(name, url)
         {
             this.Type = "Video";
+            this.UploadedOn = uploadedOn;
         }
 
         public DateTime UploadedOn

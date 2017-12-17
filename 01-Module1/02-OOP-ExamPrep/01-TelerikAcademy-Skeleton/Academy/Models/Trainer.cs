@@ -48,7 +48,7 @@ namespace Academy.Models
             var sb = new StringBuilder();
 
             sb.AppendLine("* Trainer:");
-            sb.AppendLine($" - Username: <{this.Username}>");
+            sb.AppendLine($" - Username: {this.Username}");
             sb.AppendLine($" - Technologies: {string.Join("; ", this.Technologies)}");
 
             return sb.ToString().TrimEnd();
