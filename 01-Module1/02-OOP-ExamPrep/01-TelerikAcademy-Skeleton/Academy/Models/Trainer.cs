@@ -27,9 +27,8 @@ namespace Academy.Models
             }
             set
             {
-                if (value == null) throw new ArgumentNullException("You must enter a username!");
                 if (value.Length < 3 || value.Length > 16) throw new ArgumentException("User's username should be between 3 and 16 symbols long!");
-                this.username = value;
+                this.username = value ?? throw new ArgumentNullException("You must enter a username!");
             }
         }
         public IList<string> Technologies

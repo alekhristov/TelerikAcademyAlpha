@@ -36,9 +36,8 @@ namespace Academy.Models
             }
             set
             {
-                if (value == null) throw new ArgumentNullException("You must enter a name!");
                 if (value.Length < 3 || value.Length > 45) throw new ArgumentException("The name of the course must be between 3 and 45 symbols!");
-                this.name = value;
+                this.name = value ?? throw new ArgumentNullException("You must enter a name!");
             }
         }
         public int LecturesPerWeek

@@ -74,6 +74,7 @@
     <Compile Include="Models\Contracts\ISeason.cs" />
     <Compile Include="Models\Contracts\IStudent.cs" />
     <Compile Include="Models\Contracts\ITrainer.cs" />
+    <Compile Include="Models\CourseResult.cs" />
     <Compile Include="Models\Enums\Track.cs" />
     <Compile Include="Models\Lecture.cs" />
     <Compile Include="Models\Course.cs" />
