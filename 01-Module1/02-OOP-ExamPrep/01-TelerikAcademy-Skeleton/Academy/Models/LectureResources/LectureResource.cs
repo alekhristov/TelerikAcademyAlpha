@@ -54,7 +54,7 @@ namespace Academy.Models.LectureResources
             }
         }
 
-        public virtual string Print()
+        public override string ToString()
         {
             var sb = new StringBuilder();
 

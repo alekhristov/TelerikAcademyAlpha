@@ -27,11 +27,11 @@ namespace Academy.Models.LectureResources
             }
         }
 
-        public override string Print()
+        public override string ToString()
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine(base.Print());
+            sb.AppendLine(base.ToString());
             sb.AppendLine($"     - Uploaded on: {this.UploadedOn}");
 
             return sb.ToString().TrimEnd();

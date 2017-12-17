@@ -28,11 +28,11 @@ namespace Academy.Models.LectureResources
             }
         }
 
-        public override string Print()
+        public override string ToString()
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine(base.Print());
+            sb.AppendLine(base.ToString());
             sb.AppendLine($"   - Due date: {this.DueDate}");
 
             return sb.ToString().TrimEnd();
