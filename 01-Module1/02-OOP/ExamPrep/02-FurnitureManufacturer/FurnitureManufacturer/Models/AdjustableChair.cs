@@ -12,10 +12,5 @@ namespace FurnitureManufacturer.Models
         {
             this.Height = height;
         }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }
