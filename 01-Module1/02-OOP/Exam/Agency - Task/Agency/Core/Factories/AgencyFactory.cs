@@ -1,6 +1,7 @@
-﻿using System;
-using Agency.Core.Contracts;
+﻿using Agency.Core.Contracts;
+using Agency.Models;
 using Agency.Models.Contracts;
+using Agency.Models.Vehicles;
 using Agency.Models.Vehicles.Contracts;
 
 namespace Agency.Core.Factories
@@ -21,29 +22,29 @@ namespace Agency.Core.Factories
             }
         }
         
-        public IBus CreateBus(int passengerCapacity, decimal pricePerKilometer)
+        public IVehicle CreateBus(int passengerCapacity, decimal pricePerKilometer)
         {
-            throw new NotImplementedException("You are invoking a AgencyFactory method that is not yet implemented!");
+            return new Bus(passengerCapacity, pricePerKilometer);
         }
 
-        public IAirplane CreateAirplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood)
+        public IVehicle CreateAirplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood)
         {
-            throw new NotImplementedException("You are invoking a AgencyFactory method that is not yet implemented!");
+            return new Airplane(passengerCapacity, pricePerKilometer, hasFreeFood);
         }
 
-        public ITrain CreateTrain(int passengerCapacity, decimal pricePerKilometer, int carts)
+        public IVehicle CreateTrain(int passengerCapacity, decimal pricePerKilometer, int carts)
         {
-            throw new NotImplementedException("You are invoking a AgencyFactory method that is not yet implemented!");
+            return new Train(passengerCapacity, pricePerKilometer, carts);
         }
         
         public IJourney CreateJourney(string startLocation, string destination, int distance, IVehicle vehicle)
         {
-            throw new NotImplementedException("You are invoking a AgencyFactory method that is not yet implemented!");
+            return new Journey(startLocation, destination, distance, vehicle);
         }
 
         public ITicket CreateTicket(IJourney journey, decimal administrativeCosts)
         {
-            throw new NotImplementedException("You are invoking a AgencyFactory method that is not yet implemented!");
+            return new Ticket(journey, administrativeCosts);
         }
     }
 }
