@@ -6,6 +6,7 @@ namespace Agency.Models.Vehicles
     class Train : Vehicle, ITrain
     {
         private readonly int carts;
+
         public Train(int passangerCapacity, decimal pricePerKilometer, int carts) 
             : base(passangerCapacity, pricePerKilometer, VehicleType.Land)
         {

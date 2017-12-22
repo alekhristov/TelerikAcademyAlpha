@@ -26,7 +26,6 @@ namespace Agency.Models
             this.vehicle = vehicle ?? throw new ArgumentException("There is no such vehicle");
         }
 
-
         public string StartLocation => this.startLocation;
 
         public string Destination => this.destination;

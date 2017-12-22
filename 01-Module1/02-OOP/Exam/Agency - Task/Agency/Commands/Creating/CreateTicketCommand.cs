@@ -37,6 +37,5 @@ namespace Agency.Commands.Creating
 
             return $"Ticket with ID {engine.Tickets.Count - 1} was created.";
         }
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Agency.Commands.Contracts;
 using Agency.Core.Contracts;
+using Agency.Models.Vehicles.Contracts;
 using System;
 using System.Collections.Generic;
 
@@ -34,7 +35,7 @@ namespace Traveller.Commands.Creating
             }
 
             var airplane = this.factory.CreateAirplane(passengerCapacity, pricePerKilometer, hasFreeFood);
-            this.engine.Vehicles.Add(airplane);
+            this.engine.Vehicles.Add((IVehicle)airplane);
 
             return $"Vehicle with ID {engine.Vehicles.Count - 1} was created.";
         }

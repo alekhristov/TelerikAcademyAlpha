@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Agency.Commands.Contracts;
 using Agency.Core.Contracts;
+using Agency.Models.Vehicles.Contracts;
 
 namespace Agency.Commands.Creating
 {
@@ -34,7 +35,7 @@ namespace Agency.Commands.Creating
             }
 
             var train = this.factory.CreateTrain(passengerCapacity, pricePerKilometer, cartsCount);
-            this.engine.Vehicles.Add(train);
+            this.engine.Vehicles.Add((IVehicle)train);
 
             return $"Vehicle with ID {engine.Vehicles.Count - 1} was created.";
         }
