@@ -71,7 +71,6 @@ namespace Agency.Core
                 catch (Exception ex)
                 {
                     this.Writer.WriteLine(ex.Message);
-                    this.Writer.WriteLine("####################");
                 }
             }
         }
@@ -88,7 +87,6 @@ namespace Agency.Core
 
             var executionResult = command.Execute(parameters);
             this.Writer.WriteLine(executionResult);
-            this.Writer.WriteLine("####################");
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Agency.Models
 
         public decimal CalculatePrice()
         {
-            return this.AdministrativeCosts * this.Journey.CalculateTravelCosts();
+            return this.AdministrativeCosts + this.Journey.CalculateTravelCosts();
         }
 
         public override string ToString()
@@ -33,7 +33,6 @@ namespace Agency.Models
             sb.AppendLine("Ticket ----");
             sb.AppendLine($"Destination: {this.Journey.Destination}");
             sb.AppendLine($"Price: {this.CalculatePrice()}");
-
 
             return sb.ToString().TrimEnd();
         }

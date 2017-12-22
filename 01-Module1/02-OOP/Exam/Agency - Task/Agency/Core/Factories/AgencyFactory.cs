@@ -22,17 +22,17 @@ namespace Agency.Core.Factories
             }
         }
         
-        public IVehicle CreateBus(int passengerCapacity, decimal pricePerKilometer)
+        public IBus CreateBus(int passengerCapacity, decimal pricePerKilometer)
         {
             return new Bus(passengerCapacity, pricePerKilometer);
         }
 
-        public IVehicle CreateAirplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood)
+        public IAirplane CreateAirplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood)
         {
             return new Airplane(passengerCapacity, pricePerKilometer, hasFreeFood);
         }
 
-        public IVehicle CreateTrain(int passengerCapacity, decimal pricePerKilometer, int carts)
+        public ITrain CreateTrain(int passengerCapacity, decimal pricePerKilometer, int carts)
         {
             return new Train(passengerCapacity, pricePerKilometer, carts);
         }

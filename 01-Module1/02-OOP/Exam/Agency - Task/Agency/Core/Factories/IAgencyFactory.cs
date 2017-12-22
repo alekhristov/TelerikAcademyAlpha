@@ -5,11 +5,11 @@ namespace Agency.Core.Contracts
 {
     public interface IAgencyFactory
     {
-        IVehicle CreateBus(int passengerCapacity, decimal pricePerKilometer);
+        IBus CreateBus(int passengerCapacity, decimal pricePerKilometer);
 
-        IVehicle CreateAirplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood);
+        IAirplane CreateAirplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood);
 
-        IVehicle CreateTrain(int passengerCapacity, decimal pricePerKilometer, int carts);
+        ITrain CreateTrain(int passengerCapacity, decimal pricePerKilometer, int carts);
 
         IJourney CreateJourney(string startingLocation, string destination, int distance, IVehicle vehicle);
 
