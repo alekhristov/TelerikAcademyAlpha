@@ -51,6 +51,7 @@
     <Compile Include="Commands\Listing\ListJourneysCommand.cs" />
     <Compile Include="Commands\Listing\ListTicketsCommand.cs" />
     <Compile Include="Commands\Listing\ListVehiclesCommand.cs" />
+    <Compile Include="Common\VehicleType.cs" />
     <Compile Include="Core\Factories\IAgencyFactory.cs" />
     <Compile Include="Core\Factories\AgencyFactory.cs" />
     <Compile Include="Core\Providers\DateTimeProvider.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Core\Providers\ConsoleWriter.cs" />
     <Compile Include="Models\Contracts\IJourney.cs" />
     <Compile Include="Models\Contracts\ITicket.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Models\Vehicles\Contracts\IVehicle.cs" />
     <Compile Include="Models\Vehicles\Contracts\IAirplane.cs" />
     <Compile Include="Models\Vehicles\Contracts\IBus.cs" />
