@@ -13,7 +13,7 @@ namespace Academy.Models
         public Trainer(string username, IList<string> technologies)
         {
             this.Username = username;
-            this.Technologies = new List<string>();
+           // this.Technologies = new List<string>();
             this.Technologies = technologies;
         }
 

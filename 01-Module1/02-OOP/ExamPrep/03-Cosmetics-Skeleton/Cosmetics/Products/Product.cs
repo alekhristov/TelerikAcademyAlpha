@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Cosmetics.Products
 {
-    abstract class Product : IProduct
+     class Product : IProduct
     {
         private readonly string name;
         private readonly string brand;
-        private decimal price;
+        private readonly decimal price;
         private readonly GenderType gender;
 
         public Product(string name, string brand, decimal price, GenderType gender)
@@ -24,7 +24,7 @@ namespace Cosmetics.Products
 
             this.name = name;
             this.brand = brand;
-            this.Price = price;
+            this.price = price;
             this.gender = gender;
         }
 
@@ -38,10 +38,10 @@ namespace Cosmetics.Products
             {
                 return this.price;
             }
-            protected set
-            {
-                this.price = value;
-            }
+            //protected set
+            //{
+            //    this.price = value;
+            //}
         }
 
         public GenderType Gender => this.gender;

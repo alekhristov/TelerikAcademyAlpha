@@ -1,5 +1,6 @@
 ﻿using Bytes2you.Validation;
 using Cosmetics.Contracts;
+using Cosmetics.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +23,13 @@ namespace Cosmetics
 
         public string Name => name;
 
-        public ICollection<IProduct> Products => products;
+        private ICollection<IProduct> Products => new List<IProduct>(this.products.Select(p => new Product(p.Name, p.Brand, p.Price, p.Gender)).ToList());
 
         public void AddCosmetics(IProduct cosmetics)
         {
             Guard.WhenArgument(cosmetics, "Product can not be null!").IsNull().Throw();
 
-            this.Products.Add(cosmetics);
+            this.products.Add(cosmetics);
         }
 
         public string Print()
@@ -62,7 +63,7 @@ namespace Cosmetics
                 throw new ArgumentNullException($"Product {cosmetics.Name} does not exist in category {this.Name}!");
             }
 
-            this.Products.Remove(cosmetics);
+            this.products.Remove(cosmetics);
         }
     }
 }
