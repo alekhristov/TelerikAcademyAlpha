@@ -7,7 +7,8 @@ namespace Agency.Models.Vehicles
     {
         private readonly bool hasFreeFood;
 
-        public Airplane(int passangerCapacity, decimal pricePerKilometer, bool hasFreeFood) : base(passangerCapacity, pricePerKilometer, VehicleType.Air)
+        public Airplane(int passangerCapacity, decimal pricePerKilometer, bool hasFreeFood) 
+            : base(passangerCapacity, pricePerKilometer, VehicleType.Air)
         {
             this.hasFreeFood = hasFreeFood;
         }
