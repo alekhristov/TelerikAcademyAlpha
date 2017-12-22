@@ -32,7 +32,7 @@ namespace Agency.Models
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine($"{this.Type} ----");
+            sb.AppendLine($"{this.GetType().Name} ----");
             sb.AppendLine($"Passenger capacity: {this.PassangerCapacity}");
             sb.AppendLine($"Price per kilometer: {this.PricePerKilometer}");
             sb.AppendLine($"Vehicle type: {this.Type}");
