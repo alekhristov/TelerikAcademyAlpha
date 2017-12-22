@@ -66,6 +66,7 @@
     <Compile Include="Models\Contracts\IJourney.cs" />
     <Compile Include="Models\Contracts\ITicket.cs" />
     <Compile Include="Models\Journey.cs" />
+    <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\Vehicles\Bus.cs" />
     <Compile Include="Models\Vehicles\Train.cs" />
     <Compile Include="Models\Vehicles\Vehicle.cs" />

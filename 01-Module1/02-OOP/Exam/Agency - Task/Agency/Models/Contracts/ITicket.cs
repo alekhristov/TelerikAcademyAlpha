@@ -2,9 +2,9 @@
 {
     public interface ITicket
     {
-        decimal AdministrativeCosts { get; }
-
         IJourney Journey { get; }
+
+        decimal AdministrativeCosts { get; }
 
         decimal CalculatePrice();
     }
