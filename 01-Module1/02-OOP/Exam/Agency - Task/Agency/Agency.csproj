@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Contracts\ICommand.cs" />
+    <Compile Include="Commands\Creating\CreateAirplaneCommand.cs" />
     <Compile Include="Commands\Creating\CreateJourneyCommand.cs" />
+    <Compile Include="Commands\Creating\CreateTicketCommand.cs" />
     <Compile Include="Commands\Creating\CreateTrainCommand.cs" />
     <Compile Include="Commands\Creating\CreateBusCommand.cs" />
     <Compile Include="Commands\Creating\CreateVehicleCommand.cs" />
