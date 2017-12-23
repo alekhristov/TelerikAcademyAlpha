@@ -35,7 +35,7 @@ namespace Agency.Commands.Creating
             }
 
             var train = this.factory.CreateTrain(passengerCapacity, pricePerKilometer, cartsCount);
-            this.engine.Vehicles.Add((IVehicle)train);
+            this.engine.Vehicles.Add(train);
 
             return $"Vehicle with ID {engine.Vehicles.Count - 1} was created.";
         }

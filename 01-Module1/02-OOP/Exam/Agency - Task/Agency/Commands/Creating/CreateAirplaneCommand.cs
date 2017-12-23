@@ -35,7 +35,7 @@ namespace Traveller.Commands.Creating
             }
 
             var airplane = this.factory.CreateAirplane(passengerCapacity, pricePerKilometer, hasFreeFood);
-            this.engine.Vehicles.Add((IVehicle)airplane);
+            this.engine.Vehicles.Add(airplane);
 
             return $"Vehicle with ID {engine.Vehicles.Count - 1} was created.";
         }
