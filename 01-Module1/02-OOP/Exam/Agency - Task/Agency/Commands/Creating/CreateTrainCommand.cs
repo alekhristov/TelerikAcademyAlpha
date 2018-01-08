@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Agency.Commands.Contracts;
 using Agency.Core.Contracts;
-using Agency.Models.Vehicles.Contracts;
 
 namespace Agency.Commands.Creating
 {

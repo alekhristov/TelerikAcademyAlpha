@@ -1,12 +1,11 @@
 ﻿using Agency.Commands.Contracts;
 using Agency.Core.Contracts;
-using Agency.Models.Vehicles.Contracts;
 using System;
 using System.Collections.Generic;
 
 namespace Traveller.Commands.Creating
 {
-    class CreateAirplaneCommand : ICommand
+    class CreateAirplaneCommand : ICommand  
     {
         private readonly IAgencyFactory factory;
         private readonly IEngine engine;
