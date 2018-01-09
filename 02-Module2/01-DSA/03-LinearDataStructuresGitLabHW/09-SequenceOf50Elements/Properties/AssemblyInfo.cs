@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("03-Recursion")]
+[assembly: AssemblyTitle("09-SequenceOf50Elements")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard")]
-[assembly: AssemblyProduct("03-Recursion")]
+[assembly: AssemblyProduct("09-SequenceOf50Elements")]
 [assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5a58a22e-ec80-4a37-a4d7-e0b56029be53")]
+[assembly: Guid("9c13a705-4a59-4a23-92a7-d2ae11538b5e")]
 
 // Version information for an assembly consists of the following four values:
 //

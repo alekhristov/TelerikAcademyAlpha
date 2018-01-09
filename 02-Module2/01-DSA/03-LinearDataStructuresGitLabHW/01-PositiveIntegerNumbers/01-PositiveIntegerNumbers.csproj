@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A58A22E-EC80-4A37-A4D7-E0B56029BE53}</ProjectGuid>
+    <ProjectGuid>{A8B2945C-19D1-4405-AA46-C94B2EB4C435}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_03_Recursion</RootNamespace>
-    <AssemblyName>03-Recursion</AssemblyName>
+    <RootNamespace>_01_PositiveIntegerNumbers</RootNamespace>
+    <AssemblyName>01-PositiveIntegerNumbers</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="01-PositiveIntegerNumbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
