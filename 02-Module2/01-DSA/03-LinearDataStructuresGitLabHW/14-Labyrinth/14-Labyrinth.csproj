@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7D91E3B-EC01-449C-9753-7EB1F8357C48}</ProjectGuid>
+    <ProjectGuid>{10E4E3B6-0FED-4346-8A30-C342F04061AD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_02_Swappings</RootNamespace>
-    <AssemblyName>02-Swappings</AssemblyName>
+    <RootNamespace>_14_Labyrinth</RootNamespace>
+    <AssemblyName>14-Labyrinth</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,8 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Node.cs" />
-    <Compile Include="Swappings.cs" />
+    <Compile Include="MatrixItem.cs" />
+    <Compile Include="14-Labyrinth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

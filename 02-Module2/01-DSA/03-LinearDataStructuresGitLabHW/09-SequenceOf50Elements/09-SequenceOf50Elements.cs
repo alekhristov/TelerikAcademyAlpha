@@ -19,15 +19,14 @@ namespace _09_SequenceOf50Elements
 
                 result.Enqueue(currentNum + 1);
                 if (result.Count == 50) break;
+                queue.Enqueue(currentNum + 1);
 
                 result.Enqueue((2 * currentNum) + 1);
                 if (result.Count == 50) break;
+                queue.Enqueue((2 * currentNum) + 1);
 
                 result.Enqueue(currentNum + 2);
                 if (result.Count == 50) break;
-
-                queue.Enqueue(currentNum + 1);
-                queue.Enqueue((2 * currentNum) + 1);
                 queue.Enqueue(currentNum + 2);
             }
 

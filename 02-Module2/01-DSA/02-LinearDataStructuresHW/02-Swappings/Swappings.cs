@@ -1,119 +1,97 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SwappingLinkedLists
+//Solution by AlxxlAS
+namespace _5.Swappings
 {
-    class ListNode : IEnumerable<int>
+    class Swappings
     {
-        private int value;
-        public ListNode Left { get; private set; }
-        public ListNode Right { get; private set; }
-
-        public ListNode(int v)
+        static void Main()
         {
-            value = v;
-            Left = null;
-            Right = null;
-        }
+            int n = int.Parse(Console.ReadLine());
 
-        public void Link(ListNode r)
-        {
-            Right = r;
-            r.Left = this;
-        }
+            int[] arr = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
-        public void Detach()
-        {
-            if (this.Left != null)
+            var dict = new Dictionary<int, Node>();
+
+            Node head = null;
+            Node tail = null;
+            Node prev = null;
+
+            for (int i = 1; i <= n; i++)
             {
-                this.Left.Right = null;
-                this.Left = null;
+                var node = new Node(i, prev);
+                prev = node;
+
+                if (head == null)
+                {
+                    head = node;
+                }
+
+                tail = node;
+                dict.Add(i, node);
             }
-            if (this.Right != null)
+
+            for (int i = 0; i < arr.Length; i++)
             {
-                this.Right.Left = null;
-                this.Right = null;
+                Swap(dict[arr[i]], ref head, ref tail);
             }
+
+            var current = head;
+
+            var result = new List<int>(n);
+
+            while (current != null)
+            {
+                result.Add(current.Value);
+                current = current.Next;
+            }
+
+            Console.WriteLine(string.Join(" ", result));
         }
 
-        public IEnumerator<int> GetEnumerator()
+        public static void Swap(Node node, ref Node head, ref Node tail)
         {
-            //yield return value;
-            //foreach (var next in right)
+            var nextHead = node.Next ?? node;
+            var nextTail = node.Previous ?? node;   // same as down commentS // return one that is not null
+
+            //if (node.Next == null)
             //{
-            //	yield return next;
+            //    nextHead = node;
             //}
 
-            var node = this;
-            while (node != null)
+            //if (node.Previous == null)
+            //{
+            //    nextTail = node;
+            //}
+
+            if (nextTail == node)
             {
-                yield return node.value;
-                node = node.Right;
+                node.Next = null;
             }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-    }
-
-    class MainClass
-    {
-        public static void Main()
-        {
-            var n = int.Parse(Console.ReadLine());
-            var nodes = Enumerable.Range(0, n + 1)
-                      .Select(x => new ListNode(x))
-                      .ToArray();
-
-            for (int i = 1; i < n; i++)
+            else
             {
-                nodes[i].Link(nodes[i + 1]);
+                node.Next = head;
+                head.Previous = node;
             }
 
-            var first = nodes[1];
-            var last = nodes[n];
+            if (nextHead == node)
+            {
+                node.Previous = null;
+            }
+            else
+            {
+                node.Previous = tail;
+                tail.Next = node;
+            }
 
-            Console.ReadLine()
-                   .Split(' ')
-                   .Select(int.Parse)
-                   .ToList()
-                   .ForEach(num =>
-                   {
-                       var newLast = nodes[num].Left;
-                       var newFirst = nodes[num].Right;
+            nextHead.Previous = null;
 
-                       nodes[num].Detach();
+            nextTail.Next = null;
 
-                       if (last != nodes[num])
-                       {
-                           last.Link(nodes[num]);
-                       }
-                       else
-                       {
-                           newFirst = nodes[num];
-                       }
-
-                       if (first != nodes[num])
-                       {
-                           nodes[num].Link(first);
-                       }
-                       else
-                       {
-                           newLast = nodes[num];
-                       }
-
-                       first = newFirst;
-                       last = newLast;
-                   });
-
-            //Console.WriteLine(first.Value);
-            //Console.WriteLine(last.Value);
-            //Console.WriteLine(last.Right);
-            Console.WriteLine(string.Join(" ", first));
+            head = nextHead;
+            tail = nextTail;
         }
     }
 }
