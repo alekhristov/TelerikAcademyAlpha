@@ -40,16 +40,16 @@ namespace _03_OnlineMarket
 
         public override string ToString()
         {
-            return string.Format("{0}({1})", this.Name, this.Price.ToString());
+            return $"{this.Name}({this.Price.ToString()})";
         }
     }
 
     class Program
     {
+        const string END_COMMAND = "end";
         static Set<string> productsByName = new Set<string>();
         static Dictionary<string, OrderedSet<Product>> productsByType = new Dictionary<string, OrderedSet<Product>>();
         static OrderedSet<Product> productsByPrice = new OrderedSet<Product>();
-        const string END_COMMAND = "end";
         static StringBuilder result = new StringBuilder();
 
         static void Main(string[] args)
@@ -113,7 +113,7 @@ namespace _03_OnlineMarket
             }
             else
             {
-                result.AppendFormat("Error: Type {0} does not exists", type);
+                result.AppendFormat($"Error: Type {type} does not exists");
             }
             result.AppendLine();
         }
@@ -187,12 +187,12 @@ namespace _03_OnlineMarket
                 productsByType[product.Type].Add(product);
                 productsByPrice.Add(product);
 
-                result.AppendFormat("Ok: Product {0} added successfully", product.Name);
+                result.AppendFormat($"Ok: Product {product.Name} added successfully");
                 result.AppendLine();
             }
             else
             {
-                result.AppendFormat("Error: Product {0} already exists", product.Name);
+                result.AppendFormat($"Error: Product {product.Name} already exists");
                 result.AppendLine();
             }
         }

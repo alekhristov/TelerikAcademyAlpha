@@ -3,9 +3,9 @@ using Agency.Core.Contracts;
 using System;
 using System.Collections.Generic;
 
-namespace Traveller.Commands.Creating
+namespace Agency.Commands.Creating
 {
-    class CreateAirplaneCommand : ICommand  
+    public class CreateAirplaneCommand : ICommand
     {
         private readonly IAgencyFactory factory;
         private readonly IEngine engine;
