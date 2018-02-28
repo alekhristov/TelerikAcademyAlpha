@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SpaceX</title>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"></link>
+    <link rel="stylesheet" href="app/styles/main.css"></link>
+</head>
+
+<body>
+    <audio autoplay loop>
+        <source src="app/music/music.mp3"></source>
+    </audio>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a id="spaceX" class="navbar-brand" href="#/home">
+            <img src="app/images/logo.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a id="home" class="nav-link" href="#/home">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="rockets" class="nav-link" href="#/rockets">Rockets</a>
+                </li>
+                <li class="nav-item">
+                    <a id="upcomingLaunches" class="nav-link" href="#/upcomingLaunches">Upcoming launches</a>
+                </li>
+
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Additional Info
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+
+                    </li> -->
+                <li class="nav-item">
+                    <a id="aboutUs" class="nav-link" href="#/aboutus">About us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a id="jokes" class="nav-link" data-toggle="modal" data-target="#jokesModal">Random Joke</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="jokesModal" tabindex="-1" role="dialog" aria-labelledby="jokesModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="title">Joke of the click</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="replaceText" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <div class="container">
+            <div id="request">
+            </div>
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/sammy/lib/sammy.js"></script>
+    <script src="app/scripts/config.js"></script>
+    <script src="app/scripts/homeController.js"></script>
+    <script src="app/scripts/upcomingLaunchesController.js"></script>
+    <script src="app/scripts/database.js"></script>
+    <script src="app/scripts/rocketsController.js"></script>
+    <script src="app/scripts/rocketDetailsController.js"></script>
+    <script src="app/scripts/jokeController.js"></script>
+    <script src="app/scripts/aboutUsController.js"></script>
+    <script src="app/scripts/container.js"></script>
+    <script src="app/app.js"></script>
+</body>
+
+</html>

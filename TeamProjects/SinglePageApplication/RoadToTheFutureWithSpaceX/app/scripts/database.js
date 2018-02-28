@@ -1,0 +1,5 @@
+const databaseFunc = () => {
+    return {
+        rockets: []
+    };
+}
