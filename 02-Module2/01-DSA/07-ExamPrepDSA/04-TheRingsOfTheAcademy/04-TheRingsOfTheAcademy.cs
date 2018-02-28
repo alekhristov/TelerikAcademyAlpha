@@ -18,6 +18,7 @@ namespace _04_TheRingsOfTheAcademy
 
             var factorials = new long[rings.Max() + 1];
             factorials[0] = 1;
+
             for (int i = 1; i < factorials.Length; i++)
             {
                 factorials[i] = factorials[i - 1] * i;
