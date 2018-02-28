@@ -19,6 +19,10 @@
             rocketDetailsController.visualizeRocketDetails(`${rocketId}`);
         });
 
+        this.get('#/videos', function () {
+            videosController.visualizeVideosController();
+        });
+
         this.get('#/aboutus', function () {
             aboutUsController.visualizeAboutUs();
         });
