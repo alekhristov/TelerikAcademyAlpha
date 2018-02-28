@@ -1,5 +1,0 @@
-const databaseFunc = () => {
-    return {
-        rockets: []
-    };
-}
