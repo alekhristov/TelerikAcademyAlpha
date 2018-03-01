@@ -160,3 +160,18 @@ a {
   text-decoration: underline;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 3.2%;
+  width: 100%;
+  background-color: #333;
+  color: rgb(173, 170, 170);
+  text-align: center;
+}
+
+a.footer-text {
+  color:white;
+}
