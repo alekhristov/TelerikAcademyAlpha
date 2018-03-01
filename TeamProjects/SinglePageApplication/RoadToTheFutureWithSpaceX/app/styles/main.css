@@ -25,6 +25,15 @@
   text-shadow: 10px 10px 10px rgba(0,0,0,0.3);
 }
 
+.videos-header {
+  color:#8D99AE;
+  text-align: center;
+  font-size: 9em;
+  padding-top: 0.8em;
+  font: 400 130px/0.8 'Cookie', Helvetica, sans-serif;
+  text-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+}
+
 .margin {
   margin: 0px auto !important;
 }
@@ -142,4 +151,11 @@ a {
 
 .img-rocket{
   width: 85%;
+}
+
+.more-videos{
+  margin: auto;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
