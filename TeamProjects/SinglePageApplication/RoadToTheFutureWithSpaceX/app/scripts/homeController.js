@@ -7,8 +7,10 @@ const homeController = (() => {
                 <div><img src="app/images/spaceXLogo.png" alt="" class="logo img-fluid"></div>
                 <div class="container">
                    <p class="text-style">${result.summary}</p>
-                   <h2 class="header"style="text-align:center;">Some random header!</h2>
-                   <p class="text-style">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+                   <h2 class="header"style="text-align:center;">MAKING HISTORY</h2>
+                   <p class="text-style">"SpaceX has gained worldwide attention for a series of historic milestones. It is the only private company ever to return a spacecraft from low-Earth orbit, which it first accomplished in December 2010. The company made history again in May 2012 when its Dragon spacecraft delivered cargo to and from the International Space Station — a challenging feat previously accomplished only by governments. Since then Dragon has delivered cargo to and from the space station multiple times, providing regular cargo resupply missions for NASA. </br>In 2017, SpaceX successfully achieved the first reflight of an orbital class rocket – a historic milestone on the road to full and rapid rocket reusability.</p>
+                   <p class="text-style">In 2017, SpaceX successfully achieved the first reflight of an orbital class rocket – a historic milestone on the road to full and rapid rocket reusability.</p>
+                   <p class="text-style">In 2018, most powerful operational rocket in the world 'Falcon Heavy' successfully lifted off."</p>
                 </div>
                 <div class="row">
                    <div class="col-md-6 cols-style">
