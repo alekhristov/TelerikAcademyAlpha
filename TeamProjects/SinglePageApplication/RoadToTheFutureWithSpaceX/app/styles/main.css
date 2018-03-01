@@ -155,6 +155,7 @@ a {
 
 .more-videos{
   margin: auto;
+  margin-top: 1.3em;
   text-align: center;
   text-decoration: underline;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
