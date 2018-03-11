@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5943DDD-353F-49F0-8044-4472CB83A2CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CalorieCounterEngine</RootNamespace>
+    <AssemblyName>CalorieCounterEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bytes2you.Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a7d501dd757e0442, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ActivityLevel.cs" />
+    <Compile Include="Common\ActivityType.cs" />
+    <Compile Include="Common\GenderType.cs" />
+    <Compile Include="Common\GoalType.cs" />
+    <Compile Include="Common\MealType.cs" />
+    <Compile Include="Contracts\IDailyNutriCalc.cs" />
+    <Compile Include="Contracts\IDataRepository.cs" />
+    <Compile Include="Contracts\IJsonSerializer.cs" />
+    <Compile Include="Contracts\IRestingEnergyCalculator.cs" />
+    <Compile Include="Contracts\ISuggestedDailyNutrientsIntakeCalc.cs" />
+    <Compile Include="DataRepository.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Factories\Contracts\IActivityFactory.cs" />
+    <Compile Include="Contracts\IEngine.cs" />
+    <Compile Include="Factories\Contracts\IGoalFactory.cs" />
+    <Compile Include="Factories\Contracts\IProductFactory.cs" />
+    <Compile Include="Factories\ActivityFactory.cs" />
+    <Compile Include="Factories\GoalFactory.cs" />
+    <Compile Include="Models\Contracts\IDailyIntake.cs" />
+    <Compile Include="Models\Contracts\IGoal.cs" />
+    <Compile Include="Models\DailyIntake.cs" />
+    <Compile Include="Utils\DailyNutriCalc.cs" />
+    <Compile Include="Factories\ProductFactory.cs" />
+    <Compile Include="Models\ActivityModel\Activity.cs" />
+    <Compile Include="Models\Contracts\IActivity.cs" />
+    <Compile Include="Models\Contracts\IMeal.cs" />
+    <Compile Include="Models\Contracts\IWater.cs" />
+    <Compile Include="Models\DrinksModel\CustomDrink.cs" />
+    <Compile Include="Models\DrinksModel\Water.cs" />
+    <Compile Include="Models\GoalModel\Goal.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\FoodModel\CustomFoodProduct.cs" />
+    <Compile Include="Models\Contracts\IProduct.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\EngineConstants.cs" />
+    <Compile Include="Utils\JsonSerializer.cs" />
+    <Compile Include="Utils\RelayCommand.cs" />
+    <Compile Include="Utils\RestingEnergyCalculator.cs" />
+    <Compile Include="Utils\SuggestedDailyNutrientsIntakeCalc.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CalorieCounterEngineClassDiagram.cd" />
+    <None Include="Models\Architecture.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
